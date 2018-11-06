@@ -1,0 +1,26 @@
+body{
+    text-align: center;
+    background-color: burlywood;
+}
+
+.jumbotron{
+    background-color: grey;;
+}
+
+.replicator{
+    height: 200px;
+    width: 80%;
+    background-image: url("../img/replicator.jpg");
+    background-size: 100% 100%;
+    margin: 0 auto;
+    color: aqua;
+}
+
+.replicatorCol{
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+}
+
+.prosper{
+    margin: 0 auto;
+}
