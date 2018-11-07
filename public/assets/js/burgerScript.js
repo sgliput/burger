@@ -19,15 +19,24 @@ $(function () {
         event.preventDefault();
         var newBurger = $("#burger").val().trim();
         
-        // Send the POST request.
+        //Send the POST request.
         $.ajax("/api/burgers", {
             type: "POST",
             data: { name: newBurger }
         }).then(
             function () {
                 console.log("Created new burger!");
-                // Reload the page to get the updated list
-                location.reload();
+                //Append hidden button to replicator area and fade it in over 5 seconds
+                $(".replicator").append(`<button class="replicated">${newBurger}</button>`);
+                $(".replicated").fadeIn(5000, function(){
+                    // Wait two seconds, then reload the page to get the updated list
+                    setTimeout(function() {
+                        location.reload();
+                    }, 2000);
+                    
+                });
+                
+                
             }
         );
     });

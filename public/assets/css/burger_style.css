@@ -24,3 +24,8 @@ body{
 .prosper{
     margin: 0 auto;
 }
+
+.replicated{
+    margin: 30% 0 0 0;
+    display: none;
+}
