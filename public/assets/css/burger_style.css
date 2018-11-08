@@ -3,8 +3,38 @@ body{
     background-color: burlywood;
 }
 
+h1, h2, button{
+    font-family: 'Luckiest Guy', cursive;
+}
+
 .jumbotron{
-    background-color: grey;;
+    background-color: grey;
+    padding: 2%;
+    color: white;
+    background-image: url("../img/space.jpg");
+    background-size: 100% 100%;
+}
+
+.fas{
+    padding: 0 18% 0 18%;
+}
+
+@media (max-width: 1018px) { 
+    .fas{
+        padding: 0 10% 0 10%;
+    }
+ }
+
+.picard{
+    background-image: url("../img/picardSandwich.jpg");
+    background-size: 100% 100%;
+    border: 2px solid white;
+}
+
+.vader{
+    background-image: url("../img/darthvaderBurger.jpg");
+    background-size: 100% 100%;
+    border: 2px solid white;
 }
 
 .replicator{
@@ -19,6 +49,7 @@ body{
 .replicatorCol{
     border-right: 2px solid black;
     border-left: 2px solid black;
+    border-top: 2px solid black;
 }
 
 .prosper{
