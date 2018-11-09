@@ -21,23 +21,25 @@ $(function () {
         // Will not reload the page when submitted
         event.preventDefault();
         var newBurger = $("#burger").val().trim();
-        
-        //AJAX call for a POST request sends the name of the new burger
-        $.ajax("/api/burgers", {
-            type: "POST",
-            data: { name: newBurger }
-        }).then(
-            function () {
-                console.log("Created new burger!");
-                //Append hidden button to replicator area and fade it in over 3 seconds
-                $(".replicator").append(`<button class="replicated">${newBurger}</button>`);
-                $(".replicated").fadeIn(3000, function(){
-                    // Wait two seconds, then reload the page to get the updated list
-                    setTimeout(function() {
-                        location.reload();
-                    }, 2000);
-                });
-            }
-        );
+        //if the newBurger input is not an empty string
+        if (newBurger.length > 0) {
+            //AJAX call for a POST request sends the name of the new burger
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: { name: newBurger }
+            }).then(
+                function () {
+                    console.log("Created new burger!");
+                    //Append hidden button to replicator area and fade it in over 3 seconds
+                    $(".replicator").append(`<button class="replicated">${newBurger}</button>`);
+                    $(".replicated").fadeIn(3000, function () {
+                        // Wait two seconds, then reload the page to get the updated list
+                        setTimeout(function () {
+                            location.reload();
+                        }, 2000);
+                    });
+                }
+            );
+        }
     });
 });
